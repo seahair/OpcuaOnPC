@@ -8,6 +8,7 @@ CPATH = -Lsrc
 SRCS = $(wildcard *.c)
 OBJECTS = $(patsubst %c,%o, $(SRCS))
 
+all:$(OBJECTS)
 
 $(OBJECTS):$(SRCS)
 	$(CC) $(CINCLUDE) $(CFLAGS) $< -o ../build/$@
