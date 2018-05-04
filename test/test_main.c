@@ -30,5 +30,7 @@ int main( int argc, char **argv )
 {
 	printf(" Test main is OK? \n");
 
+	UA_Boolean TE;
+	TE = UA_TRUE;
 	return 0;
 }

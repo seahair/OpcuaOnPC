@@ -32,6 +32,8 @@ extern "C"
 #endif
 
 #include <stdio.h>
+#include "ua_constants.h"
+#include "ua_types.h"
 
 #ifdef __cplusplus
 }
