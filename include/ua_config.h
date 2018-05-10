@@ -81,9 +81,20 @@ extern "C"
 #endif
 
 /**
- * Embed unavailable libc functions
- * 嵌入式没有C库，要自己实现这四个接口函数了
- * -------------------------------- */
+ * Non-aliasing pointers
+ * -------------------- */
+#ifdef _MSC_VER
+# define UA_RESTRICT __restrict
+#elif defined(__GNUC__)
+# define UA_RESTRICT __restrict__
+#else
+# define UA_RESTRICT restrict
+#endif
+
+	/**
+	 * Embed unavailable libc functions
+	 * 嵌入式没有C库，要自己实现这四个接口函数了
+	 * -------------------------------- */
 #include <stddef.h>
 #ifdef UA_ENABLE_EMBEDDED_LIBC
 	void *memcpy(void *UA_RESTRICT dest, const void *UA_RESTRICT src, size_t n);
