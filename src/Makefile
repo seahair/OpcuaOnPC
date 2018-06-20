@@ -6,15 +6,16 @@ CFLAGS = -g3 -c
 CINCLUDE = -I../include
 CPATH = -Lsrc
 SRCS = $(wildcard *.c)
-OBJECTS = $(patsubst %c,%o, $(SRCS))
+OBJECTS = $(patsubst %c,../build/%o, $(SRCS))
 
 all:$(OBJECTS)
 
-$(OBJECTS):$(SRCS)
-	$(CC) $(CINCLUDE) $(CFLAGS) $< -o ../build/$@
+../build/%o:%c
+	@echo $(SRCS)
+	$(CC) $(CINCLUDE) $(CFLAGS) $< -o $@
 
 .PHONY: clean
 
 clean:
-	rm -f ../build/$(OBJECTS)
+	rm -f $(OBJECTS)
 
