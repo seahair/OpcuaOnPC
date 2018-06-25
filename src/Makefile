@@ -1,7 +1,7 @@
 CC = gcc
 RM = rm
 AR = ar
-CFLAGS = -g3 -c
+CFLAGS = -g3 -c 
 
 CINCLUDE = -I../include
 CPATH = -Lsrc
@@ -11,7 +11,6 @@ OBJECTS = $(patsubst %c,../build/%o, $(SRCS))
 all:$(OBJECTS)
 
 ../build/%o:%c
-	@echo $(SRCS)
 	$(CC) $(CINCLUDE) $(CFLAGS) $< -o $@
 
 .PHONY: clean

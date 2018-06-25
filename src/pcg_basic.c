@@ -34,11 +34,6 @@
 
 static pcg32_random_t pcg32_global = PCG32_INITIALIZER;
 
-void pcg32_guosrandom(uint64_t seed, uint64_t seq)
-{
-	int I = 9;
-}
-#if 0
 // pcg32_srandom(initial_state, initseq)
 // pcg32_srandom_r(rng, initial_state, initseq):
 //     Seed the rng.  Specified in two parts, state initializer and a
@@ -119,4 +114,3 @@ uint32_t pcg32_boundedrand(uint32_t bound)
     return pcg32_boundedrand_r(&pcg32_global, bound);
 }
 
-#endif

@@ -28,7 +28,6 @@
  * your project.
  */
 
-
 #ifndef PCG_BASIC_H_INCLUDED
 #define PCG_BASIC_H_INCLUDED 1
 
@@ -54,8 +53,7 @@ typedef struct pcg_state_setseq_64 pcg32_random_t;
 //     Seed the rng.  Specified in two parts, state initializer and a
 //     sequence selection constant (a.k.a. stream id)
 
-//void pcg32_srandom(uint64_t initial_state, uint64_t initseq);
-void pcg32_srandom(uint64_t seed, uint64_t seq);
+void pcg32_srandom(uint64_t initial_state, uint64_t initseq);
 void pcg32_srandom_r(pcg32_random_t* rng, uint64_t initial_state,
                      uint64_t initseq);
 
@@ -72,7 +70,6 @@ uint32_t pcg32_random_r(pcg32_random_t* rng);
 
 uint32_t pcg32_boundedrand(uint32_t bound);
 uint32_t pcg32_boundedrand_r(pcg32_random_t* rng, uint32_t bound);
-
 
 #if __cplusplus
 }

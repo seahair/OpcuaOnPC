@@ -13,7 +13,7 @@ all:$(TARGET)
 $(TARGET):$(OBJECTS)
 	make -C src
 	make -C test
-	$(CC) $(CFLAGS) build/*.o -o $@ 
+	$(CC) $(CFLAGS) -Lbuild -Iinclude  build/*.o -o $@ 
 
 
 .PHONY: clean
